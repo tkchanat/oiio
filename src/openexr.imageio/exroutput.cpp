@@ -1441,6 +1441,8 @@ OpenEXROutput::copy_image(ImageInput* in)
                     m_deep_tiled_output_part->copyPixels(
                         *exr_in->m_deep_tiled_input_part);
                     return true;
+                } else {
+                    errorf("Fallback to default copy");
                 }
             } catch (const std::exception& e) {
                 errorf(
