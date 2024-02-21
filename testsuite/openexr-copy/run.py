@@ -14,13 +14,6 @@ import os, sys
 # Capture error output
 redirect = " >> out.txt 2>&1 "
 
-# Create some test images we need
-command += oiiotool("../common/tahoe-tiny.tif --compression pxr24 -o ref/compressed-pxr24.exr")
-command += oiiotool("../common/tahoe-tiny.tif --compression b44 -o ref/compressed-b44.exr")
-command += oiiotool("../common/tahoe-tiny.tif --compression b44a -o ref/compressed-b44a.exr")
-command += oiiotool("../common/tahoe-tiny.tif --compression dwaa -o ref/compressed-dwaa.exr")
-command += oiiotool("../common/tahoe-tiny.tif --compression dwab -o ref/compressed-dwab.exr")
-
 # Run the recompression test script 
 command += pythonbin + " src/test_recompression.py;"
 
