@@ -137,7 +137,7 @@ jobs:
             cxx_std: 17
             python_ver: 3.9
             setenvs: export SANITIZE=address,undefined
-                            OIIO_CMAKE_FLAGS="-DSANITIZE=address,undefined -DUSE_PYTHON=0"
+                            OIIO_CMAKE_FLAGS="-DSANITIZE=address,undefined"
                             CMAKE_BUILD_TYPE=Debug
                             CTEST_TEST_TIMEOUT=1200
                             CTEST_EXCLUSIONS="broken|png-damaged"
