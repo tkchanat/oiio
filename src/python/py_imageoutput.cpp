@@ -250,13 +250,8 @@ declare_imageoutput(py::module& m)
              [](ImageOutput& self, const ImageBuf& thumb) {
                  return self.set_thumbnail(thumb);
              })
-        .def("copy_image",
-             [](ImageOutput& self, ImageInput& in) {
-                 Strutil::print("[Debug] py_copy_image\n");
-                 Strutil::print("[Debug] in.spec={}\n", in.spec());
-                 Strutil::print("[Debug] out.spec={}\n", out.spec());
-                 return self.copy_image(&in);
-             })
+        .def("copy_image", [](ImageOutput& self,
+                              ImageInput& in) { return self.copy_image(&in); })
         .def_property_readonly("has_error", &ImageOutput::has_error)
         .def(
             "geterror",
